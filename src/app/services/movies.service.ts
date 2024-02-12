@@ -16,4 +16,10 @@ export class MoviesService {
       `${this.api_url}/movie/popular?api_key=${this.api_key}`
     )
   }
+
+  getUpcomingMovies() {
+    return this.http.get<MoviesDTO>(
+      `${this.api_url}/movie/upcoming?api_key=${this.api_key}`
+    )
+  }
 }

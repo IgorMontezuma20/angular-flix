@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MoviesService } from '../../services/movies.service';
 
 @Component({
   selector: 'app-banner',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class BannerComponent {
 
+
+  constructor(private movieService: MoviesService) {}
+
+  upcomingMovies$ = this.movieService.getUpcomingMovies();
 }
