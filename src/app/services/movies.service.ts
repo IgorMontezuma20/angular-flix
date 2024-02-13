@@ -12,21 +12,10 @@ export class MoviesService {
 
   constructor(private http: HttpClient) {}
 
-  getPopularMovies() {
+  getMoviesByType(type: string){
     return this.http.get<MoviesDTO>(
-      `${this.api_url}/movie/popular?api_key=${this.api_key}&language=${this.movie_language}`
+      `${this.api_url}/movie/${type}?api_key=${this.api_key}&language=${this.movie_language}`
     )
   }
 
-  getUpcomingMovies() {
-    return this.http.get<MoviesDTO>(
-      `${this.api_url}/movie/upcoming?api_key=${this.api_key}&language=${this.movie_language}`
-    )
-  }
-
-  getTopRatedMovies() {
-    return this.http.get<MoviesDTO>(
-      `${this.api_url}/movie/top_rated?api_key=${this.api_key}&language=${this.movie_language}`
-    )
-  }
 }
