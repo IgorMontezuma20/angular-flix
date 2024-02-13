@@ -10,6 +10,6 @@ export class HomeComponent {
 
   constructor(private movieService: MoviesService) {}
 
-  upcomingMovies$ = this.movieService.getMoviesByType('upcoming');
-  topRatedMovies$ = this.movieService.getMoviesByType('top_rated');
+  upcomingMovies$ = this.movieService.getMoviesByType('upcoming', 12);
+  topRatedMovies$ = this.movieService.getMoviesByType('top_rated', 12);
 }
