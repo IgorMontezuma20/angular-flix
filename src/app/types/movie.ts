@@ -9,7 +9,6 @@ export type Movie = {
   release_date: string;
   poster_path: string;
   title: string;
-  name?: string;
   vote_average: number;
   vote_count: number;
 }
