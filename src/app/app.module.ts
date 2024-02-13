@@ -21,7 +21,6 @@ import { ShowItemComponent } from './components/show-item/show-item.component';
     SliderComponent,
     BannerComponent,
     ShowItemComponent,
-
   ],
   imports: [
     BrowserModule,
