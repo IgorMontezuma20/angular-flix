@@ -17,7 +17,6 @@ export class ShowDetailComponent implements OnInit{
 
   constructor(private router: ActivatedRoute, private moviesService: MoviesService) { }
 
-
    ngOnInit(): void {
     this.showId = this.router.snapshot.params['id'];
     this.show$ = this.moviesService.getMovieById(this.showId);

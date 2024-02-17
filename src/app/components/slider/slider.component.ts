@@ -1,9 +1,7 @@
-import { Component, OnInit } from '@angular/core'
-
-
-import { MoviesService } from '../../services/movies.service'
+import { Component, Input, OnInit} from '@angular/core'
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { imagesBaseUrl } from '../../constants/images-sizes';
+import { Movie } from '../../types/movie';
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
@@ -16,9 +14,10 @@ import { imagesBaseUrl } from '../../constants/images-sizes';
   ],
 })
 export class SliderComponent implements OnInit{
-  constructor(private moviesService: MoviesService) {}
 
-  movies$ = this.moviesService.getMoviesByType('popular');
+  @Input() slides : Movie[] = []
+
+  constructor() {}
 
   slideIndex = 0;
 

@@ -15,6 +15,7 @@ export class HomeComponent {
     private tvShowsService: TvshowsService
   ) {}
 
+  popularMovies$ = this.movieService.getMoviesByType('popular', 12)
   upcomingMovies$ = this.movieService.getMoviesByType('upcoming', 12)
   topRatedMovies$ = this.movieService.getMoviesByType('top_rated', 12)
   popularTvShows$ = this.tvShowsService.getTvShowsByType('popular', 12).pipe(
