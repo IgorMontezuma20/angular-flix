@@ -1,7 +1,7 @@
-import { Component, Input, OnInit} from '@angular/core'
-import { animate, state, style, transition, trigger } from '@angular/animations';
-import { imagesBaseUrl } from '../../constants/images-sizes';
-import { Movie } from '../../types/movie';
+import { Component, Input, OnInit } from '@angular/core'
+import { animate, state, style, transition, trigger } from '@angular/animations'
+import { imagesBaseUrl } from '../../constants/images-sizes'
+import { Movie } from '../../types/movie'
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
@@ -13,27 +13,28 @@ import { Movie } from '../../types/movie';
     ]),
   ],
 })
-export class SliderComponent implements OnInit{
-
-  @Input() slides : Movie[] = []
+export class SliderComponent implements OnInit {
+  @Input() slides: Movie[] = []
+  @Input() isHeader = false
 
   constructor() {}
 
-  slideIndex = 0;
+  slideIndex = 0
 
-  imagesBaseUrl = imagesBaseUrl;
+  imagesBaseUrl = imagesBaseUrl
 
   ngOnInit() {
-    this.changeSlide();
+    if (!this.isHeader) {
+      this.changeSlide()
+    }
   }
 
   changeSlide() {
     setInterval(() => {
-      this.slideIndex += 1;
+      this.slideIndex += 1
       if (this.slideIndex > 10) {
-        this.slideIndex = 0;
+        this.slideIndex = 0
       }
-    }, 5000);
+    }, 5000)
   }
-
 }

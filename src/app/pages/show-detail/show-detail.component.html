@@ -1,5 +1,5 @@
 <ng-container *ngIf="show$ | async  as show">
-  <app-slider [slides]="[show]"></app-slider>
+  <app-slider [slides]="[show]" [isHeader]="true"></app-slider>
 </ng-container>
 <p>O Id do filme é: {{showId}}</p>
 <pre>
