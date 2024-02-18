@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Movie } from '../../types/movie';
+import { IMAGES_SIZES } from '../../constants/images-sizes';
 
 @Component({
   selector: 'app-show-detail',
@@ -14,6 +15,8 @@ export class ShowDetailComponent implements OnInit{
   showId = '';
 
   show$: Observable<Movie> | null = null;
+
+  imagesSizes =IMAGES_SIZES;
 
   constructor(private router: ActivatedRoute, private moviesService: MoviesService) { }
 
