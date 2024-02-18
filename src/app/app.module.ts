@@ -12,6 +12,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { ShowItemComponent } from './components/show-item/show-item.component';
 import { ShowDetailComponent } from './pages/show-detail/show-detail.component';
+import { TabViewModule } from 'primeng/tabview';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { ShowDetailComponent } from './pages/show-detail/show-detail.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    TabViewModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
