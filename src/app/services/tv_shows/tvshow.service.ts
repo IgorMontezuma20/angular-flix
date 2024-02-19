@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
-import { TvShowsDTO } from '../types/tvShow';
+import { TvShowsDTO } from '../../types/tvShow';
 
 @Injectable({
   providedIn: 'root'

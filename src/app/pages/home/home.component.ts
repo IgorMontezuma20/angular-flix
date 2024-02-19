@@ -1,6 +1,6 @@
-import { TvshowsService } from './../../services/tvshow.service'
+import { TvshowsService } from '../../services/tv_shows/tvshow.service'
 import { Component } from '@angular/core'
-import { MoviesService } from '../../services/movies.service'
+import { MoviesService } from '../../services/movies/movies.service'
 import { map } from 'rxjs'
 import { mapToMovies } from '../../types/tvShow'
 
