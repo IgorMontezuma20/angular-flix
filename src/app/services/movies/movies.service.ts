@@ -4,6 +4,7 @@ import { Movie, MoviesDTO } from '../../types/movie'
 import { map } from 'rxjs'
 import { VideoDTO } from '../../types/video'
 import { ImageDTO } from '../../types/image'
+import { CreditsDTO } from '../../types/credits'
 
 @Injectable({
   providedIn: 'root',
@@ -42,4 +43,12 @@ export class MoviesService {
     )
     .pipe(map((response) => response.backdrops));
   }
+  getMovieCast(id: string) {
+    return this.http.get<CreditsDTO>(
+      `${this.api_url}/movie/${id}/credits?api_key=${this.api_key}`
+    )
+    .pipe(map((response) => response.cast));
+  }
+
+
 }
