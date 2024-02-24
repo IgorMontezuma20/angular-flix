@@ -14,6 +14,7 @@ import { ShowItemComponent } from './components/show-item/show-item.component';
 import { ShowDetailComponent } from './pages/show-detail/show-detail.component';
 import { TabViewModule } from 'primeng/tabview';
 import { VideoEmbedComponent } from './components/video-embed/video-embed.component';
+import { ImageModule } from 'primeng/image';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { VideoEmbedComponent } from './components/video-embed/video-embed.compon
     HttpClientModule,
     BrowserAnimationsModule,
     TabViewModule,
+    ImageModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

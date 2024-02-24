@@ -36,3 +36,8 @@
 .value{
   color: $primary-color-thin;
 }
+
+.show-image {
+  width: 100%;
+  object-fit: cover;
+}
