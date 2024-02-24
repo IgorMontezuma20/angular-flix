@@ -56,16 +56,7 @@
       <ng-container *ngIf="showVideos$ | async as showVideos">
         <div class="grid">
           <div class="col-4" *ngFor="let showVideo of showVideos">
-            <iframe
-              width="560"
-              height="315"
-              [src]="'https://www.youtube.com/embed/' + showVideo.key"
-              title=""
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-            {{ showVideos | json }}
+            <app-video-embed [key]="showVideo.key"></app-video-embed>
           </div>
         </div>
       </ng-container>
