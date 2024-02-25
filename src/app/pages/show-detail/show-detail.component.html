@@ -86,7 +86,11 @@
     >
       <ng-template let-actor pTemplate="item">
         <div class="actor">
-          <img [src]="imagesSizes.medium + actor.profile_path" [alt]="" />
+          <img
+            *ngIf="actor.profile_path; else defaultActorImage"
+            [src]="imagesSizes.medium + actor.profile_path"
+            [alt]=""
+          />
           <div>{{ actor.character }}</div>
           <div>({{ actor.name }})</div>
         </div>
@@ -94,3 +98,7 @@
     </p-carousel>
   </ng-container>
 </ng-container>
+
+<ng-template #defaultActorImage>
+  <img src="assets/images/actor.jpg" alt="Sem Foto" />
+</ng-template>
