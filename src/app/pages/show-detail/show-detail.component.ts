@@ -22,6 +22,7 @@ export class ShowDetailComponent implements OnInit{
   showVideos$: Observable<Video[]> | null = null;
   showImages$: Observable<Image[]> | null = null;
   showCast$: Observable<Actor[]> | null = null;
+  similarShows$: Observable<Movie[]> | null = null;
 
 
   constructor(private router: ActivatedRoute, private moviesService: MoviesService) { }
@@ -32,5 +33,6 @@ export class ShowDetailComponent implements OnInit{
     this.showVideos$ = this.moviesService.getMovieVideos(this.showId);
     this.showImages$ = this.moviesService.getMovieImages(this.showId);
     this.showCast$ = this.moviesService.getMovieCast(this.showId);
+    this.similarShows$ = this.moviesService.getSimilarMovies(this.showId);
    }
 }

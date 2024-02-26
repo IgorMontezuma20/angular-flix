@@ -49,6 +49,11 @@ export class MoviesService {
     )
     .pipe(map((response) => response.cast));
   }
-
+  getSimilarMovies(id: string) {
+    return this.http.get<MoviesDTO>(
+      `${this.api_url}/movie/${id}/similar?api_key=${this.api_key}&language=${this.movie_language}`
+    )
+    .pipe(map((response) => response.results));
+  }
 
 }
