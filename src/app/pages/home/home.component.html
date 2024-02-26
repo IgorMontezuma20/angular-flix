@@ -3,14 +3,23 @@
 </ng-container>
 
 <ng-container *ngIf="upcomingMovies$ | async as upcomingMovies">
-  <app-banner [title]="'Próximos Filmes'" [shows]="upcomingMovies"></app-banner>
+  <app-banner
+    [title]="'Próximos Filmes'"
+    [shows]="upcomingMovies"
+    showsType="movie"
+  ></app-banner>
 </ng-container>
 <ng-container *ngIf="topRatedMovies$ | async as topRatedMovies">
-  <app-banner [title]="'Mais Avaliados'" [shows]="topRatedMovies"></app-banner>
+  <app-banner
+    [title]="'Mais Avaliados'"
+    [shows]="topRatedMovies"
+    showsType="movie"
+  ></app-banner>
 </ng-container>
 <ng-container *ngIf="popularTvShows$ | async as popularTvShows">
   <app-banner
     [title]="'Séries Populares'"
     [shows]="popularTvShows"
+    showsType="tv"
   ></app-banner>
 </ng-container>

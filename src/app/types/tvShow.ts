@@ -1,7 +1,6 @@
+import { Movie } from './movie';
 
-import { Movie } from "./movie";
-
-export type TvShow = {
+export type Tvshow = {
   id: number;
   backdrop_path: string;
   genre_ids: number[];
@@ -9,27 +8,35 @@ export type TvShow = {
   original_name: string;
   overview: string;
   popularity: number;
-  release_date: string;
   poster_path: string;
+  release_date: string;
   name: string;
   vote_average: number;
   vote_count: number;
   first_air_date: string;
-}
+};
 
-export type TvShowsDTO = {
+export type TvshowsDto = {
   page: number;
-  results: TvShow[];
+  results: Tvshow[];
   total_pages: number;
   total_results: number;
+};
+
+export function mapToMovies(tvshows: Tvshow[]): Movie[] {
+  return tvshows.map((tvshow: Tvshow) => {
+    return {
+      ...tvshow,
+      title: tvshow.name,
+      original_title: tvshow.original_name,
+    };
+  });
 }
 
-export function mapToMovies(tvShows: TvShow[]): Movie[]{
-  return tvShows.map((tvShow: TvShow) => {
-    return {
-      ...tvShow,
-      title: tvShow.name,
-      original_title: tvShow.original_name,
-    }
-  })
+export function mapToMovie(tvshow: Tvshow): Movie {
+  return {
+    ...tvshow,
+    title: tvshow.name,
+    original_title: tvshow.original_name,
+  };
 }
