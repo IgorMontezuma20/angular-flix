@@ -16,6 +16,7 @@ import { TabViewModule } from 'primeng/tabview';
 import { VideoEmbedComponent } from './components/video-embed/video-embed.component';
 import { ImageModule } from 'primeng/image';
 import { CarouselModule } from 'primeng/carousel';
+import { ShowsListComponent } from './pages/shows-list/shows-list.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { CarouselModule } from 'primeng/carousel';
     ShowItemComponent,
     ShowDetailComponent,
     VideoEmbedComponent,
+    ShowsListComponent,
   ],
   imports: [
     BrowserModule,
