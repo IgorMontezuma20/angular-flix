@@ -13,6 +13,8 @@ export class ShowsListComponent implements OnInit {
 
   showsList$: Observable<Movie[]> | null = null
   searchValue = ''
+  rows = 20
+  totalRecords = 120
 
   ngOnInit() {
     this.getPagedShows(1)
@@ -24,5 +26,9 @@ export class ShowsListComponent implements OnInit {
 
   searchMovie(){
     this.getPagedShows(1, this.searchValue)
+  }
+
+  onPageChange(event: any) {
+    this.getPagedShows(event.page + 1, this.searchValue)
   }
 }
