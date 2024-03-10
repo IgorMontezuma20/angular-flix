@@ -1,21 +1,28 @@
-import { Component, OnInit } from '@angular/core';
-import { MoviesService } from '../../services/movies/movies.service';
-import { Movie } from '../../types/movie';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core'
+import { MoviesService } from '../../services/movies/movies.service'
+import { Movie } from '../../types/movie'
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'app-shows-list',
   templateUrl: './shows-list.component.html',
-  styleUrl: './shows-list.component.scss'
+  styleUrl: './shows-list.component.scss',
 })
-export class ShowsListComponent implements OnInit{
+export class ShowsListComponent implements OnInit {
+  constructor(private moviesService: MoviesService) {}
 
-  constructor(private moviesService:MoviesService) {}
-
-  showsList$: Observable<Movie[]> | null = null;
+  showsList$: Observable<Movie[]> | null = null
+  searchValue = ''
 
   ngOnInit() {
-    this.showsList$ = this.moviesService.searchMovies(1);
+    this.getPagedShows(1)
   }
 
+  getPagedShows(page: number, searchKeyword?: string) {
+    this.showsList$ = this.moviesService.searchMovies(page, searchKeyword)
+  }
+
+  searchMovie(){
+    this.getPagedShows(1, this.searchValue)
+  }
 }

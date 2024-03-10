@@ -57,8 +57,9 @@ export class MoviesService {
   }
 
   searchMovies(page:number, searchValue?: string) {
+    const uri = searchValue ? `search/movie` : 'movie/popular?'
     return this.http.get<MoviesDTO>(
-      `${this.api_url}/search/movie?query=${searchValue}&page=${page}&api_key=${this.api_key}&language=${this.movie_language}`
+      `${this.api_url}/${uri}?query=${searchValue}&page=${page}&api_key=${this.api_key}&language=${this.movie_language}`
     )
     .pipe(map((response) => response.results));
   }

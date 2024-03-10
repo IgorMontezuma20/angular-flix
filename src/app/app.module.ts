@@ -18,6 +18,7 @@ import { ImageModule } from 'primeng/image';
 import { CarouselModule } from 'primeng/carousel';
 import { ShowsListComponent } from './pages/shows-list/shows-list.component';
 import { InputTextModule } from 'primeng/inputtext';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { InputTextModule } from 'primeng/inputtext';
     TabViewModule,
     ImageModule,
     CarouselModule,
-    InputTextModule
+    InputTextModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
