@@ -27,41 +27,43 @@ export class MoviesService {
   getMovieById(id: string) {
     return this.http.get<Movie>(
       `${this.api_url}/movie/${id}?api_key=${this.api_key}&language=${this.movie_language}`
-    );
+    )
   }
 
   getMovieVideos(id: string) {
-    return this.http.get<VideoDTO>(
-      `${this.api_url}/movie/${id}/videos?api_key=${this.api_key}&language=${this.movie_language}`
-    )
-    .pipe(map((response) => response.results));
+    return this.http
+      .get<VideoDTO>(
+        `${this.api_url}/movie/${id}/videos?api_key=${this.api_key}&language=${this.movie_language}`
+      )
+      .pipe(map((response) => response.results))
   }
 
   getMovieImages(id: string) {
-    return this.http.get<ImageDTO>(
-      `${this.api_url}/movie/${id}/images?api_key=${this.api_key}`
-    )
-    .pipe(map((response) => response.backdrops));
+    return this.http
+      .get<ImageDTO>(
+        `${this.api_url}/movie/${id}/images?api_key=${this.api_key}`
+      )
+      .pipe(map((response) => response.backdrops))
   }
   getMovieCast(id: string) {
-    return this.http.get<CreditsDTO>(
-      `${this.api_url}/movie/${id}/credits?api_key=${this.api_key}`
-    )
-    .pipe(map((response) => response.cast));
+    return this.http
+      .get<CreditsDTO>(
+        `${this.api_url}/movie/${id}/credits?api_key=${this.api_key}`
+      )
+      .pipe(map((response) => response.cast))
   }
   getSimilarMovies(id: string) {
-    return this.http.get<MoviesDTO>(
-      `${this.api_url}/movie/${id}/similar?api_key=${this.api_key}&language=${this.movie_language}`
-    )
-    .pipe(map((response) => response.results));
+    return this.http
+      .get<MoviesDTO>(
+        `${this.api_url}/movie/${id}/similar?api_key=${this.api_key}&language=${this.movie_language}`
+      )
+      .pipe(map((response) => response.results))
   }
 
-  searchMovies(page:number, searchValue?: string) {
-    const uri = searchValue ? `search/movie` : 'movie/popular?'
+  searchMovies(page: number, searchValue?: string) {
+    const uri = searchValue ? 'search/movie' : 'movie/popular';
     return this.http.get<MoviesDTO>(
       `${this.api_url}/${uri}?query=${searchValue}&page=${page}&api_key=${this.api_key}&language=${this.movie_language}`
-    )
-    .pipe(map((response) => response.results));
+    );
   }
-
 }

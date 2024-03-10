@@ -14,18 +14,18 @@
   </div>
   <ng-container *ngIf="showsList$ | async as showsList">
     <div class="grid">
-      <div class="col-2" *ngFor="let show of showsList">
+      <div class="col-2" *ngFor="let show of showsList.results">
         <app-show-item [showItem]="show" />
       </div>
     </div>
-  </ng-container>
-  <div class="grid">
-    <div class="col-12">
-      <p-paginator
-        (onPageChange)="onPageChange($event)"
-        [rows]="rows"
-        [totalRecords]="totalRecords"
-      ></p-paginator>
+    <div class="grid">
+      <div class="col-12">
+        <p-paginator
+          (onPageChange)="onPageChange($event)"
+          [rows]="rows"
+          [totalRecords]="showsList.total_results"
+        ></p-paginator>
+      </div>
     </div>
-  </div>
+  </ng-container>
 </div>
