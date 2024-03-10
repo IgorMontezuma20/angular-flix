@@ -6,13 +6,9 @@ import { ShowsListComponent } from './pages/shows-list/shows-list.component'
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'list', component: ShowsListComponent },
+  { path: 'list/:type', component: ShowsListComponent },
   {
     path: 'detail/:id/:type',
-    component: ShowDetailComponent,
-  },
-  {
-    path: 'detail/:id/detail/:id',
     component: ShowDetailComponent,
   },
 ]

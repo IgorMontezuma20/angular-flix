@@ -53,4 +53,8 @@ export class TvshowsService {
       .get<TvshowsDto>(`${this.api_url}/tv/${id}/similar?api_key=${this.api_key}&language=${this.tv_show_language}`)
       .pipe(map((data) => data.results.slice(0, 12)));
   }
+  searchTvShow(page: number, searchKeyword?: string) {
+    const uri = searchKeyword ? '/search/tv' : '/tv/popular';
+    return this.http.get<TvshowsDto>(`${this.api_url}${uri}?page=${page}&query=${searchKeyword}&api_key=${this.api_key}&language=${this.tv_show_language}`);
+  }
 }
