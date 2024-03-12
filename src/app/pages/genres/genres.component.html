@@ -1,9 +1,8 @@
 <div class="container">
   <div class="grid">
     <div class="col-12 genres-links">
-      <ng-container>
-        <a>Ação</a>
-        <a>Comedia</a>
+      <ng-container *ngIf="genres$ | async as genres">
+        <a *ngFor="let genre of genres">{{ genre.name }}</a>
       </ng-container>
     </div>
   </div>
