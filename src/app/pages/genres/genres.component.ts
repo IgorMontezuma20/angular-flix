@@ -20,12 +20,10 @@ export class GenresComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.genreId = this.route.snapshot.params['genreId']
+    this.route.params.subscribe((params) => {
+      this.genreId = params['genreId']
+      this.shows$ = this.moviesService.getMoviesByGenre(this.genreId)
+    })
     this.genres$ = this.moviesService.getMoviesGenres()
-    this.shows$ = this.moviesService.getMoviesByGenre(this.genreId)
-  }
-
-  findByGenre(genreId: string) {
-    //this.shows$ = this.moviesService.getMoviesByGenre(genreId, 1)
   }
 }
