@@ -30,5 +30,8 @@ export type Genre = {
 }
 
 export type GenresDTO = {
+  page: number;
   genres: Genre[];
+  total_pages: number;
+  total_results: number;
 }

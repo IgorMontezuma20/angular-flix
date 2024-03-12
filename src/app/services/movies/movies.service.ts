@@ -61,15 +61,29 @@ export class MoviesService {
   }
 
   searchMovies(page: number, searchValue?: string) {
-    const uri = searchValue ? 'search/movie' : 'movie/popular';
+    const uri = searchValue ? 'search/movie' : 'movie/popular'
     return this.http.get<MoviesDTO>(
       `${this.api_url}/${uri}?query=${searchValue}&page=${page}&api_key=${this.api_key}&language=${this.movie_language}`
-    );
+    )
   }
 
   getMoviesGenres() {
     return this.http
-    .get<GenresDTO>(`${this.api_url}/genre/movie/list?api_key=${this.api_key}&language=${this.movie_language}`)
-    .pipe(map((response) => response.genres));
+      .get<GenresDTO>(
+        `${this.api_url}/genre/movie/list?api_key=${this.api_key}&language=${this.movie_language}`
+      )
+      .pipe(map((response) => response.genres))
+  }
+
+  getMoviesByGenre(genreId: string, pageNumber = 1) {
+    return this.http
+      .get<MoviesDTO>(
+        `${this.api_url}/discover/movie?with_genres=${genreId}&page=${pageNumber}&api_key=${this.api_key}&language=${this.movie_language}`
+      )
+      .pipe(
+        map((data) => {
+          return data.results
+        })
+      )
   }
 }
