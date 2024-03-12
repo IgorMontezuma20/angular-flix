@@ -15,6 +15,10 @@ const routes: Routes = [
   {
     path:'genres',
     component: GenresComponent
+  },
+  {
+    path:'genres/:genreId',
+    component: GenresComponent
   }
 ]
 

@@ -4,8 +4,7 @@
       <ng-container *ngIf="genres$ | async as genres">
         <a
           *ngFor="let genre of genres"
-          (click)="findByGenre(genre.id)"
-          (keyup)="findByGenre(genre.id)"
+          [routerLink]="['/genres/' + genre.id]"
           role="button"
           aria-hidden="true"
           >{{ genre.name }}</a
