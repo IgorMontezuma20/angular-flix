@@ -1,27 +1,22 @@
-# NgFlix
+# AngularFlix
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.0.
+Esta aplicação é um clone da interface da Netflix, desenvolvida com Angular 17. Ela consome a API do [The Movie DB](https://www.themoviedb.org/) para obter dados sobre filmes. A aplicação permite a listagem de filmes em várias categorias, bem como a visualização dos detalhes dos filmes, incluindo elenco, imagens, trailer e data de cartaz.
 
-## Development server
+## Funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Listagem de Filmes**
+- **Últimos lançamentos**
+- **Categorias (e.g., Ação, Comédia, Drama)**
+- **Avaliação (filmes com melhores avaliações)**
+- **Filtrar por categoria**
 
-## Code scaffolding
+- **Detalhe do Filme**
+  - Informações do elenco
+  - Imagens do filme
+  - Trailer do filme
+  - Data de cartaz
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tecnologias Utilizadas
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- **Angular 17**
+- **PrimeNG** (biblioteca de componentes)
