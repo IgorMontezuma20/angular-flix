@@ -19,4 +19,5 @@ Esta aplicação é um clone da interface da Netflix, desenvolvida com Angular 1
 ## Tecnologias Utilizadas
 
 - **Angular 17**
+- **RXJS**
 - **PrimeNG** (biblioteca de componentes)
